@@ -1,0 +1,53 @@
+# AWS-free prequalification only. No secrets, no model calls, no confirmatory authorization.
+name: ETB Q1 Native Preflight (source-scoped)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout ETB package without persisted token
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Validate frozen package prior to third-party installation
+        run: |
+          python3 scripts/verify_release.py
+      - name: Fetch and verify exactly pinned upstream tau2 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet https://github.com/sierra-research/tau2-bench.git vendor/tau2-bench
+          git -C vendor/tau2-bench checkout --quiet --detach c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4
+          test "$(git -C vendor/tau2-bench rev-parse HEAD)" = "c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4"
+          test -z "$(git -C vendor/tau2-bench status --porcelain --untracked-files=no)"
+      - name: Resolve pinned upstream uv.lock without dependency drift
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f vendor/tau2-bench/uv.lock
+          python3.12 -m venv .venv-tools
+          .venv-tools/bin/python -m pip install 'uv==0.13.9'
+          (cd vendor/tau2-bench && ../../.venv-tools/bin/uv sync --frozen --no-dev --python "$(command -v python3.12)")
+          .venv-tools/bin/uv pip freeze --python vendor/tau2-bench/.venv/bin/python > "$RUNNER_TEMP/etb-pip-freeze.txt"
+      - name: Execute frozen native task-8 reference replay (NOT an agent run)
+        shell: bash
+        run: |
+          set -euo pipefail
+          vendor/tau2-bench/.venv/bin/python scripts/run_pinned_native.py \
+            --checkout vendor/tau2-bench \
+            --out-dir results/github_native \
+            --pip-freeze "$RUNNER_TEMP/etb-pip-freeze.txt" \
+            --upstream-lock vendor/tau2-bench/uv.lock
+          python3 scripts/validate_native_artifact.py --artifact-dir results/github_native
+      - name: Upload raw native evidence, including partial failure output
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: etb-q1-native-preflight-${{ github.run_id }}-${{ github.run_attempt }}
+          path: results/github_native/
+          if-no-files-found: warn
+          retention-days: 30
