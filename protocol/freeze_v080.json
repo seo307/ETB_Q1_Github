@@ -1,0 +1,28 @@
+{
+  "allowed_workflow_event": "workflow_dispatch",
+  "assurance_ceiling": "SOURCE_SCOPED_NATIVE_PREFLIGHT_ONLY",
+  "controls": [
+    "repeat_initial_state_no_write",
+    "reference_action_native_replay"
+  ],
+  "domain": "airline",
+  "expected_runner_label": "ubuntu-24.04",
+  "failure_policy": "No substitutions, remapping, skipping, implicit retry, or success from unverifiable GitHub metadata.",
+  "independent_effect_oracle": false,
+  "native_agent_calls": 0,
+  "prior_v072_private_release_sha256": "8b1f1f13483fa6924535732e05ddc6a583ae3a3425502a1e726f2d6792780f82",
+  "q0_original_private_sha256": "345f4f6673bf31fcec0d50bde87ff970b00d0171da504c383ea02b050a6c10cc",
+  "q0_redaction_contract": "protocol/q0_redaction_v080.json",
+  "q0_sha256": "6706cfaef1665e685ebadc1f328528c5f2eca618e2d5eaa38cba5c82da476ee4",
+  "q1_independent_root_verified": false,
+  "q2_confirmatory_eligible": false,
+  "schema": "ETB_Q1_GITHUB_NATIVE_FREEZE_v080",
+  "selection_basis": "Pre-existing v0.5.0 development pilot task, fixed before this package; not a new confirmatory selection.",
+  "source_commit": "c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4",
+  "source_repo": "https://github.com/sierra-research/tau2-bench.git",
+  "status": "DEVELOPMENT_SOURCE_SCOPED_ONLY",
+  "task_authorization_gold": false,
+  "task_id": "8",
+  "tool_version_pin": "uv==0.13.9",
+  "upstream_dependency_installation": "UV_SYNC_FROZEN_WITH_PINNED_UPSTREAM_UV_LOCK"
+}

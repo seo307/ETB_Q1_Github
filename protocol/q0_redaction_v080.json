@@ -1,0 +1,10 @@
+{
+  "original_q0_location": "PRIVATE_PROVENANCE_SIDECAR_NOT_UPLOADED",
+  "prior_v072_private_zip_sha256": "8b1f1f13483fa6924535732e05ddc6a583ae3a3425502a1e726f2d6792780f82",
+  "private_path_not_disclosed": true,
+  "public_sha256": "6706cfaef1665e685ebadc1f328528c5f2eca618e2d5eaa38cba5c82da476ee4",
+  "redaction_verified_during_package_build": true,
+  "schema": "ETB_Q0_REDACTION_CONTRACT_v080",
+  "source_sha256": "345f4f6673bf31fcec0d50bde87ff970b00d0171da504c383ea02b050a6c10cc",
+  "transformation": "Parse original JSON, replace only top-level repository field with REDACTED_LOCAL_PATH; preserve every other field, without changing byte formatting outside replaced string."
+}

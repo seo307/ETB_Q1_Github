@@ -1,0 +1,1885 @@
+{
+  "airline_base_ids": [
+    "0",
+    "1",
+    "3",
+    "4",
+    "5",
+    "7",
+    "9",
+    "10",
+    "11",
+    "12",
+    "14",
+    "15",
+    "17",
+    "20",
+    "21",
+    "23",
+    "27",
+    "28",
+    "33",
+    "34",
+    "36",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "46",
+    "47",
+    "49",
+    "2",
+    "6",
+    "8",
+    "13",
+    "16",
+    "18",
+    "19",
+    "22",
+    "24",
+    "25",
+    "26",
+    "29",
+    "30",
+    "31",
+    "32",
+    "35",
+    "37",
+    "44",
+    "45",
+    "48"
+  ],
+  "confirmatory_eligible": false,
+  "domains": {
+    "airline": {
+      "basis_counts": {
+        "DB+COMMUNICATE": 50
+      },
+      "errors": [],
+      "n": 50,
+      "rows": [
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "0",
+          "reference_action_count": 0,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "1",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "2",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "3",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "4",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "5",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "6",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "7",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "8",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "9",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "10",
+          "reference_action_count": 0,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "11",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "12",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "13",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "14",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "15",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "16",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "17",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "18",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "19",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "20",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "21",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "22",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "23",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "24",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "25",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "26",
+          "reference_action_count": 0,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "27",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "28",
+          "reference_action_count": 0,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "29",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "30",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "31",
+          "reference_action_count": 0,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "32",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "33",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "34",
+          "reference_action_count": 0,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "35",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "36",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "37",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "38",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "39",
+          "reference_action_count": 11,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "40",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "41",
+          "reference_action_count": 8,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "42",
+          "reference_action_count": 10,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "43",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "44",
+          "reference_action_count": 19,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "45",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "46",
+          "reference_action_count": 0,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "47",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "48",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "49",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "COMMUNICATE"
+          ]
+        }
+      ]
+    },
+    "retail": {
+      "basis_counts": {
+        "DB": 2,
+        "DB+NL_ASSERTION": 112
+      },
+      "errors": [],
+      "n": 114,
+      "rows": [
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "0",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "1",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "2",
+          "reference_action_count": 11,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "3",
+          "reference_action_count": 12,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "4",
+          "reference_action_count": 13,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "5",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "6",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "7",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "8",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "9",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "10",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "11",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "12",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "13",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "14",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "15",
+          "reference_action_count": 7,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "16",
+          "reference_action_count": 9,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "17",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "18",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "19",
+          "reference_action_count": 7,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "20",
+          "reference_action_count": 10,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "21",
+          "reference_action_count": 12,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "22",
+          "reference_action_count": 7,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "23",
+          "reference_action_count": 12,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "24",
+          "reference_action_count": 0,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "25",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "26",
+          "reference_action_count": 8,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "27",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "28",
+          "reference_action_count": 11,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "29",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "30",
+          "reference_action_count": 13,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "31",
+          "reference_action_count": 12,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "32",
+          "reference_action_count": 13,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "33",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "34",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "35",
+          "reference_action_count": 7,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "36",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "37",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "38",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "39",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "40",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "41",
+          "reference_action_count": 10,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "42",
+          "reference_action_count": 10,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "43",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "44",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "45",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "46",
+          "reference_action_count": 7,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "47",
+          "reference_action_count": 7,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "48",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "49",
+          "reference_action_count": 10,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "50",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "51",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "52",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "53",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "54",
+          "reference_action_count": 12,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "55",
+          "reference_action_count": 13,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "56",
+          "reference_action_count": 7,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "57",
+          "reference_action_count": 0,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "58",
+          "reference_action_count": 6,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "59",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "60",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "61",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "62",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "63",
+          "reference_action_count": 7,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "64",
+          "reference_action_count": 8,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "65",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "66",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "67",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "68",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "69",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "70",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "71",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "72",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "73",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "74",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "75",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "76",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "77",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "78",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "79",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "80",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "81",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "82",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "83",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "84",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "85",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "86",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "87",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "88",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "89",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "90",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "91",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "92",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "93",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "94",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "95",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "96",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "97",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "98",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "99",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "100",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "101",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "102",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "103",
+          "reference_action_count": 4,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "104",
+          "reference_action_count": 5,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "105",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "106",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "107",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "108",
+          "reference_action_count": 1,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "109",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "110",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "111",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "112",
+          "reference_action_count": 3,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        },
+        {
+          "DB_in_native_reward": true,
+          "ETB_confirmatory_eligible": false,
+          "authorization_oracle": false,
+          "id": "113",
+          "reference_action_count": 2,
+          "reward_basis": [
+            "DB",
+            "NL_ASSERTION"
+          ]
+        }
+      ]
+    }
+  },
+  "head": "c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4",
+  "issues": [],
+  "native_benchmark_executed": false,
+  "pin_commit": "c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4",
+  "repository": "REDACTED_LOCAL_PATH",
+  "stage": "Q0_LOCAL_PIN_AND_CENSUS",
+  "status": "Q0_LOCAL_SOURCE_PIN_VERIFIED_Q1_STILL_REQUIRED"
+}
