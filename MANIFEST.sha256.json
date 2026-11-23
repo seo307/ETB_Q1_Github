@@ -26,7 +26,7 @@
   "scripts/evaluate_q1b_github_run.py": "f0df9742b586083c264d790887269ff97a0fa54c7fec46fa018dedcd2e83ff78",
   "scripts/fetch_github_run.py": "c17fa3094fb59a4e54b937a5a3c2d0e69cb79db952c9100fc6688bb9cea3a0f0",
   "scripts/make_manifest.py": "e7163ae55f42b5ef38066eada5260a1409ea97339c770a139021ef75a1569d4d",
-  "scripts/q1b_native_probe.py": "53592e2e31d91438bdcf6adbc730b21fd9b746dd6dcd7a9548d96d49f948714d",
+  "scripts/q1b_native_probe.py": "72f796227cbc6135b2eb6d39e54b26927160ce404131b128b9ce5fd8167e9afc",
   "scripts/run_pinned_native.py": "f2fe3e168968a138213be478b80030c1156bd86cb5ea69fd7272f863e5b46232",
   "scripts/validate_native_artifact.py": "81f59ad55ff1f2c4c586f73e9c44011050706ce1edf20049db41165f85a35da1",
   "scripts/validate_q1b_artifact.py": "db055ed0661ceeabc9dd4da3d51b498076f5203a333f3ce4c9329707fbf01c62",
@@ -38,5 +38,5 @@
   "tests/test_fetch_and_release.py": "065de2a672aff3ba4fb9fac484ea90997b0c27fad942131f548a1f926d967ba9",
   "tests/test_github.py": "afa75cc760a5fcbffb3e075b8402e8d1354279fc1466960df9621e8db92c5da9",
   "tests/test_privacy.py": "7b9997ebf3b5303580de5e7678af67a2cac63cac8127c70e0aebc94155a13607",
-  "tests/test_q1b.py": "4dce4a0eec93fe6b4824873a484ef0fb5632ae739d9de5cb0b1eb2f77cdf2296"
+  "tests/test_q1b.py": "fe8b852dfb3ac7168ae759dc626f09bb89ef730fc97b68dad7983f12f2a0bf7b"
 }

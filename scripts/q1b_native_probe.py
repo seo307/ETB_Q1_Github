@@ -134,7 +134,7 @@ def main():
  try:
   result=native_qualify(Path(a.checkout).resolve())
   (out/'native_semantic.json').write_bytes(json_bytes(result))
-  from etb_github.q1b import sha,json_bytes
+  # json_bytes and sha are module-scoped imports above. Never shadow them here.
   lock=Path(a.upstream_lock);freeze=Path(a.pip_freeze)
   require(lock.name=='uv.lock' and lock.is_file(),'FROZEN_LOCK_MISSING')
   require(freeze.is_file(),'PIP_FREEZE_MISSING')

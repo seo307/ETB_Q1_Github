@@ -100,4 +100,59 @@ class Q1BTests(unittest.TestCase):
   mf=read_json(ROOT/'MANIFEST.sha256.json')
   self.assertEqual(sha(ROOT/'.github/workflows/etb-q1-native-preflight.yml'),mf['.github/workflows/etb-q1-native-preflight.yml'])
 
+
+
+class Q1BNativeSerializationRegressionTests(unittest.TestCase):
+ """Regression for run 45089548502: no local rebinding of module-level serializers.
+
+ Mocking is confined to native_qualify; the real main() writes actual
+ artifacts and computes their real SHA-256. This does not validate native
+ tau2 execution or elevate research qualification.
+ """
+ def _invoke(self,dir_path,fail=False):
+  import os,sys
+  from unittest import mock
+  from scripts import q1b_native_probe as probe
+  p=Path(dir_path);lock=p/'uv.lock';lock.write_bytes(b'frozen-lock-fixture\n')
+  packages=p/'packages.txt';packages.write_bytes(b'package==0.0\n')
+  output=p/'out'
+  argv=['q1b_native_probe.py','--checkout',str(p),'--out-dir',str(output),
+        '--pip-freeze',str(packages),'--upstream-lock',str(lock)]
+  fake_native=(RuntimeError('DELIBERATE_NATIVE_ERROR') if fail else example())
+  with mock.patch.object(sys,'argv',argv),mock.patch.object(
+    probe,'native_qualify',side_effect=fake_native if fail else None,
+    return_value=None if fail else fake_native),mock.patch.dict(
+    os.environ,{'GITHUB_ACTIONS':'true','GITHUB_REPOSITORY':'fixture/repo',
+                'GITHUB_RUN_ID':'123','GITHUB_SHA':'0'*40}):
+   status=probe.main()
+  return status,output
+
+ def test_success_serializes_all_five_artifacts(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   status,out=self._invoke(tmp)
+   self.assertEqual(status,0)
+   files={'native_semantic.json','context.json','upstream_uv.lock',
+          'python_packages.txt','SHA256_MANIFEST.json'}
+   self.assertEqual({x.name for x in out.iterdir()},files)
+   manifest=read_json(out/'SHA256_MANIFEST.json')
+   self.assertEqual(set(manifest),files-{'SHA256_MANIFEST.json'})
+   for name,digest in manifest.items():self.assertEqual(digest,sha(out/name))
+   self.assertEqual(read_json(out/'context.json')['run_mode'],
+                    'GITHUB_CONTEXT_SELF_REPORTED')
+   self.assertEqual(read_json(out/'context.json')['q1_status'],'Q1_BLOCKED')
+   self.assertEqual(read_json(out/'native_semantic.json')['overall'],
+                    'SOURCE_SCOPED_Q1B_DEVELOPMENT_PASS')
+
+ def test_failure_serializes_fail_closed_receipt(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   status,out=self._invoke(tmp,fail=True)
+   self.assertEqual(status,2)
+   self.assertEqual({x.name for x in out.iterdir()},{'FAILURE.json'})
+   error=read_json(out/'FAILURE.json')
+   self.assertEqual(error['status'],'Q1B_NATIVE_BLOCKED')
+   self.assertEqual(error['exception_type'],'RuntimeError')
+   self.assertIn('DELIBERATE_NATIVE_ERROR',error['reason'])
+   self.assertIs(error['confirmatory_eligible'],False)
+   self.assertEqual(error['q1_status'],'Q1_BLOCKED')
+
 if __name__=='__main__':unittest.main()
