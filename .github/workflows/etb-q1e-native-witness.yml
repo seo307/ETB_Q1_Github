@@ -1,0 +1,51 @@
+name: ETB Q1E Task8 Witness (source-scoped, NO Q1 promotion)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  q1e-source-native:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout without persisted credentials
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verify qualification freeze and package
+        run: |
+          python3 scripts/verify_q1e_freeze.py
+          python3 -m unittest discover -s tests -p 'test_q1e*.py' -q
+      - name: Checkout exact upstream tau2 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet https://github.com/sierra-research/tau2-bench.git vendor/tau2-bench
+          git -C vendor/tau2-bench checkout --quiet --detach c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4
+          test "$(git -C vendor/tau2-bench rev-parse HEAD)" = 'c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4'
+          test -z "$(git -C vendor/tau2-bench status --porcelain --untracked-files=no)"
+      - name: Install pinned upstream dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3.12 -m venv .venv-tools
+          .venv-tools/bin/python -m pip install 'uv==0.13.9'
+          (cd vendor/tau2-bench && ../../.venv-tools/bin/uv sync --frozen --no-dev --python "$(command -v python3.12)")
+      - name: Capture original Task8 gold state, independent-code check
+        shell: bash
+        run: |
+          set -euo pipefail
+          vendor/tau2-bench/.venv/bin/python scripts/capture_pinned_task8.py \
+            --checkout vendor/tau2-bench \
+            --run-binding "Q1E_NATIVE_${GITHUB_RUN_ID}_${GITHUB_RUN_ATTEMPT}" \
+            --out-dir results/native_runtime
+          python3 scripts/assess_bundle.py --bundle results/native_runtime/bundle \
+            --out results/native_runtime/independent_verifier.json
+      - name: Upload original capture including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: etb-q1e-witness-${{ github.run_id }}-${{ github.run_attempt }}
+          path: results/native_runtime/
+          if-no-files-found: warn
+          retention-days: 30
