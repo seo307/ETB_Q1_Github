@@ -1,0 +1,54 @@
+# Q1B source-scoped development only; original native Oracle DB component, no agent/model.
+name: ETB Q1B Native Semantic Qualification (source-scoped)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  q1b-native-semantic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout pinned ETB package without persisted token
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verify public package, prior evidence linkage, and freeze
+        run: |
+          python3 scripts/verify_q1b_release.py
+          python3 -m unittest discover -s tests -q
+      - name: Fetch exact native upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet https://github.com/sierra-research/tau2-bench.git vendor/tau2-bench
+          git -C vendor/tau2-bench checkout --quiet --detach c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4
+          test "$(git -C vendor/tau2-bench rev-parse HEAD)" = "c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4"
+          test -z "$(git -C vendor/tau2-bench status --porcelain --untracked-files=no)"
+      - name: Install upstream lock unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f vendor/tau2-bench/uv.lock
+          python3.12 -m venv .venv-tools
+          .venv-tools/bin/python -m pip install 'uv==0.13.9'
+          (cd vendor/tau2-bench && ../../.venv-tools/bin/uv sync --frozen --no-dev --python "$(command -v python3.12)")
+          .venv-tools/bin/uv pip freeze --python vendor/tau2-bench/.venv/bin/python > "$RUNNER_TEMP/etb-q1b-pip-freeze.txt"
+      - name: Native DB semantic controls (not a model or full-task evaluation)
+        shell: bash
+        run: |
+          set -euo pipefail
+          vendor/tau2-bench/.venv/bin/python scripts/q1b_native_probe.py \
+            --checkout vendor/tau2-bench \
+            --out-dir results/q1b_native \
+            --pip-freeze "$RUNNER_TEMP/etb-q1b-pip-freeze.txt" \
+            --upstream-lock vendor/tau2-bench/uv.lock
+          python3 scripts/validate_q1b_artifact.py --artifact-dir results/q1b_native
+      - name: Upload raw evidence including blocked outputs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: etb-q1b-semantic-${{ github.run_id }}-${{ github.run_attempt }}
+          path: results/q1b_native/
+          if-no-files-found: warn
+          retention-days: 30
