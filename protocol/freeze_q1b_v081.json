@@ -1,0 +1,22 @@
+{
+  "schema": "ETB_Q1B_FREEZE_v081",
+  "source_commit": "c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4",
+  "task_id": "8",
+  "domain": "airline",
+  "reward_basis_expected": ["DB", "COMMUNICATE"],
+  "estimator": "Native EnvironmentEvaluator DB-check on deterministic tool trajectories; not full native task reward",
+  "controls": ["no_write", "gold_path", "omitted_write", "rejected_write", "tampered_tool_output_lenient"],
+  "strict_tamper_expected": "REJECTED_STRICT_REPLAY",
+  "target_state_criterion": "DB hashes and bounded reservation/seat structural properties match pinned native reference",
+  "reference_run_id": 45085918830,
+  "reference_run_sha": "eaecb26bddd8a70df5668d2646160e00d7315b44",
+  "reference_artifact_sha256": "a48f2ac62d2c5ac286fe77f533b33f840d1206be1afea2ef0b483f99b0006081",
+  "no_oracle_independence_claim": true,
+  "no_full_task_success_claim": true,
+  "failure_policy": "Fail closed on any drift, missing native replay, status mismatch, or unclear control. No posthoc qualification. Keep raw failure output.",
+  "analysis_frozen_before_q1b_external_execution": true,
+  "model_calls": 0,
+  "q1_independent_root_verified": false,
+  "confirmatory_eligible": false,
+  "research_stage": "Q1B_EXTERNAL_RUNNER_DEVELOPMENT_QUALIFICATION_ONLY"
+}

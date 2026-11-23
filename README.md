@@ -1,45 +1,56 @@
-# ETB Q1 GitHub-hosted Native Preflight v0.8.0 — AWS 불필요
+# ETB Q1B Native Semantic Qualification v0.8.1
 
-**현재 단계:** Q0 `PASS_SOURCE_PIN_ONLY` · v0.6.5 Docker `DEVELOPMENT PASS`(사용자 제공 기록) · v0.7.2 local release `PASS`(사용자 제공 기록) · GitHub external run **NOT EXECUTED** · native agent runs **0** · Q1 **BLOCKED** · Q2 **NOT STARTED**.
+**AWS 없는 GitHub Actions 기반, 고정된 τ²-bench Airline Task 8의 native DB component 자격 검증.**
 
-## 무엇을 제공하나
+This package is a new **development-only Q1B** stage. It does not run an LLM agent, does not compute full task success, and cannot certify an independently administered observer. `Q1_BLOCKED` is by design.
 
-수동 실행 전용 `.github/workflows/etb-q1-native-preflight.yml`은 최소 권한 `contents:read`, GitHub-hosted `ubuntu-24.04`, SHA 고정된 checkout/upload-artifact action을 사용한다. 원본 τ²-bench 소스 commit `c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4`를 **실행 시점에 clone하고 정확히 checkout**하고, Python 3.12 및 고정된 `uv==0.13.9`로 원본 `uv.lock`을 `uv sync --frozen` 적용한 후 기존 native Airline Task 8 preflight를 실행한다. 실행 결과와 설치 패키지를 GitHub workflow artifact로 게시한다. Actions나 GitHub 계정을 이 채팅에서 연결/변경하지 않았다.
+## Source and evidence
 
-이것은 **소스스코프 원본 상태 전이 사전검증**이지, 실제 LLM 에이전트 실험이 아니고 process assurance의 독립 외부 오라클이 아니다. 원본 tau2-bench를 번들하지 않는다. `_PRIVATE_PROVENANCE.zip`는 별도 보존본이며 공개 실행용 ZIP에는 원본 Q0나 v0.7.2 ZIP을 넣지 않았다.
+- Original benchmark: Sierra `sierra-research/tau2-bench` at `c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4`.
+- Prior GitHub workflow run: `45085918830` (success), source commit `eaecb26bddd8a70df5668d2646160e00d7315b44`.
+- Prior workflow artifact ZIP SHA256: `a48f2ac62d2c5ac286fe77f533b33f840d1206be1afea2ef0b483f99b0006081`.
+- The prior artifact's **five raw files** are included unmodified in `evidence/v080_run45085918830/`.
+- The original v0.8.0 source layout and workflow are retained; a second workflow and new Q1B scripts are added. No private v0.7.x or non-redacted Mac Q0 evidence is bundled. Original source ZIP is preserved outside this public package.
 
-## 1. Mac에서 릴리스만 검증 (GitHub 불필요)
+## Local release validation (no tau2 install required)
 
 ```bash
-cd ETB_Q1_GitHubNative_v0.8.0
 python3 -m unittest discover -s tests -q
-python3 scripts/verify_release.py
+python3 scripts/verify_q1b_release.py
 ```
 
-## 2. GitHub Actions에서 수동 실행 (별도 서버/AWS 불필요)
+## GitHub Actions execution
 
-1. 패키지의 **공개 실행용 파일만** GitHub 저장소 루트에 push한다. **`_PRIVATE_PROVENANCE.zip`은 절대로 업로드하지 않는다.** 공개본 Q0는 개인 Mac 경로 한 필드만 비식별화했고 원본 SHA는 `protocol/q0_redaction_v080.json`에 기록돼 있다. 보안상 비공개 저장소도 가능하다. workflow는 `.github/workflows/` 경로를 유지한다.
-2. GitHub 웹의 **Actions → ETB Q1 Native Preflight (source-scoped) → Run workflow**를 클릭한다. 이 워크플로는 `workflow_dispatch`만 허용하고 모델 API 자격증명을 요구하지 않는다. GitHub 실행 비용·정책은 사용자 계정 조건에 따름.
-3. 완료 후 Actions 화면에서 `etb-q1-native-preflight-<RUN_ID>-<ATTEMPT>` artifact를 내려받아 Mac에서 `native_dir/`로 압축 해제한다. 실패 시 아티팩트가 없을 수 있고 그것 자체가 실패 증거다. `GITHUB_RUN_ID`, `GITHUB_RUN_ATTEMPT`는 Actions UI에서 확인한다.
-4. Mac에서 GitHub API의 **실제** run/jobs 기록을 별도 조회한다. 공개 저장소는 인증 없이도 읽힐 수 있지만 호출 제한이 있고, 비공개 저장소는 터미널의 `GH_TOKEN`이 필요할 수 있다. 토큰을 채팅이나 아티팩트에 첨부하지 않는다.
+Upload the **contents** of this package to the existing public `seo307/ETB_Q1_Github` repository, preserving hidden `.github/` and `.gitignore`. Commit as a **new version**. Existing workflow `.github/workflows/etb-q1-native-preflight.yml` is not replaced. A new workflow will appear:
+
+**Actions → ETB Q1B Native Semantic Qualification (source-scoped) → Run workflow**.
+
+This manually triggered workflow validates the package, fetches exactly pinned tau2, installs the original locked dependencies, then calls the actual native `EnvironmentEvaluator.calculate_reward` on five deterministic controlled trajectories and evaluates target-state semantics. It writes only bounded, non-PII booleans and hashes, plus environment/dependency provenance. Any mismatch halts with evidence instead of auto-correcting results.
+
+After the GitHub run completes, download the workflow artifact `etb-q1b-semantic-<RUN_ID>-<ATTEMPT>` separately from the repository ZIP. It contains `native_semantic.json`, `context.json`, `upstream_uv.lock`, `python_packages.txt`, and `SHA256_MANIFEST.json` if successful.
 
 ```bash
-python3 scripts/fetch_github_run.py --repo OWNER/REPO --run-id RUN_ID --out-dir results/gh_run_RUN_ID
-python3 scripts/evaluate_github_run.py \
-  --run-json results/gh_run_RUN_ID/run.json \
-  --jobs-json results/gh_run_RUN_ID/jobs.json \
-  --native-dir /path/to/downloaded/native_dir \
-  --out results/gh_run_RUN_ID/evaluation.json
+python3 scripts/validate_q1b_artifact.py --artifact-dir /path/to/unpacked/q1b_artifact
+
+python3 scripts/fetch_github_run.py \
+ --repo seo307/ETB_Q1_Github --run-id YOUR_RUN_ID \
+ --out-dir results/gh_q1b_run_YOUR_RUN_ID
+
+python3 scripts/evaluate_q1b_github_run.py \
+ --run-json results/gh_q1b_run_YOUR_RUN_ID/run.json \
+ --jobs-json results/gh_q1b_run_YOUR_RUN_ID/jobs.json \
+ --artifact-dir /path/to/unpacked/q1b_artifact \
+ --out results/gh_q1b_run_YOUR_RUN_ID/q1b_external_audit.json
 ```
 
-결과가 `GITHUB_HOSTED_NATIVE_PREFLIGHT_CORROBORATED`여도 **`q1_status=Q1_BLOCKED`**가 정상이다. 작업 전 스크립트에 이미 동결된 freeze 및 prior Q0를 사용자 결과에 맞춰 다시 쓰지 않는다. 원격 실패는 기록하고 무단 재실행/모델 변경을 피한다.
+**Do not change the frozen thresholds, task, tool definitions or source after seeing GitHub outputs.** If the native integration finds compatibility gaps, keep the failed run and record a scoped development repair as a separate version. Never re-label a repair as a preregistered confirmatory success.
 
-## 중요 제약
+## Native result semantics
 
-- **관리 독립성:** 같은 GitHub 저장소 관리자라면 워크플로·아티팩트에 영향 가능. GitHub REST는 실행 메타데이터 확인 도구일 뿐 별도 관리 trust root가 아님.
-- **오라클:** Task 8 reference actions는 원본 DB의 상태 변화 확인에만 사용하며 정책 승인·정당성의 gold가 아님. 원본 τ²-bench native reward를 재구현하거나 교체하지 않음.
-- **환경:** 원본 commit·Q0·원본 `uv.lock`을 고정하고 `uv sync --frozen`을 사용한다. 결과에 `upstream_uv.lock`, `python_packages.txt` 및 환경을 보존한다. 다만 Python 패치·OS·네트워크 미러 환경의 동등성까지 자동 보장하지 않음.
-- **소스 정보:** v0.7.2 이전 결과를 Q1 PASS로 변경하지 않음. 외부 독립 effect oracle 확보 전에는 Q2를 실행하지 않음.
-- **안전:** 제3자 저장소 코드를 CI에서 설치/실행하므로 읽기 전용 토큰과 비밀키 부재를 유지. `pull_request_target`, PR 트리거, write scope를 추가하지 말 것.
+Native task 8 uses DB and communication; this stage runs **only the DB evaluator**, not user communication or full task reward. Positive gold replay and negative omitted/rejected tool controls are expected to match/negate native DB target. A deliberately corrupted final ToolMessage should be rejected under strict replay yet can preserve DB equality under `strict=False` (a designed upstream regrade mode). **This does not establish independent process trust or a vulnerability in tau2.**
 
-연구 프로토콜: `docs/01_qualification_protocol_KO.md` · 품질·한계: `docs/02_quality_and_claims_KO.md`.
+Research docs: `docs/03_Q1B_native_semantic_protocol_KO.md`, `docs/04_research_quality_claim_guard_KO.md`.
+
+## Status at packaging
+
+Local 73 automated tests, 40/40 release-manifest files verified. **No v0.8.1 GitHub-hosted native run performed at packaging.** Native effect-oracle independence not established; administrative trust-root Q1A remains `BLOCKED`; confirmatory Q2 not started.
