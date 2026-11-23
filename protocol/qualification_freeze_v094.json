@@ -1,0 +1,68 @@
+{
+  "schema": "ETB_Q1E_PROSPECTIVE_NATIVE_QUALIFICATION_v094",
+  "study": "Claim-specific witness distinguishing power and limits for pinned tau2 Airline Task 8",
+  "research_stage": "DEVELOPMENT_FINITE_FIXTURE_COMPLETED_BEFORE_THIS_FREEZE; NATIVE_QUALIFICATION_NOT_YET_EXECUTED",
+  "source_commit": "c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4",
+  "native_task_id": "8",
+  "native_reward_basis": ["DB", "COMMUNICATE"],
+  "assessed_component": "DB_STATE_ONLY; COMMUNICATE_NOT_EVALUATED",
+  "reference_actions": ["get_user_details", "get_reservation_details", "search_direct_flight", "book_reservation"],
+  "claims": {
+    "C1_RESERVATION": "Exactly one new reservation for the intended user, linked to their reservation list, with pre-existing reservation IDs preserved",
+    "C2_BOOKING_FIELDS": "C1 and source-derived route, one-way, economy, flight, date, two expected synthetic passengers, payment history, zero baggage, no insurance",
+    "C3_COMMIT_CONSISTENCY": "C2 and source-local economy inventory decrement, fare consistency, certificate existence beforehand and consumption afterward",
+    "C4_PROCESS_AUTH_ROOT": "Appropriate authorization, actual principal, independently administered native effect source and correct process; not testable by source-local state alone"
+  },
+  "claim_dependency": {"C2_BOOKING_FIELDS":["C1_RESERVATION"],"C3_COMMIT_CONSISTENCY":["C2_BOOKING_FIELDS"]},
+  "dispositions": ["SUPPORTED_SOURCE_SCOPED", "CONTRADICTED", "INDETERMINATE", "NOT_IDENTIFIED"],
+  "construct_boundaries": [
+    "Native evaluator DB hash equality is not process assurance",
+    "State projection is not semantically independent from authoritative tau2 model",
+    "Asha of bytes is not an independent assertion of truth",
+    "Q1C GitHub Issue is not construct-equivalent to Airline DB",
+    "Native Task8 reference actions are a target-DB construction aid, not required per-action policy",
+    "Passenger digests refer only to a published synthetic dataset; not safe anonymization for real persons",
+    "No model, no user interaction and no COMMUNICATE evaluation"
+  ],
+  "source_scope_eligibility": {
+    "pin_exact": true,
+    "exact_task8_gold_arguments": true,
+    "native_python": "3.12.x",
+    "fresh_in_memory_environments": true,
+    "no_modification_of_upstream_repository": true,
+    "one_gold_replay_per_native_execution": true,
+    "automatic_stop_on_gold_mismatch": true
+  },
+  "development_controls": {
+    "negative_mutation_pairs": 16,
+    "mutation_selection": "16 author-chosen one-field negatives; full matrix in results/author_controls/matrix.csv",
+    "withheld_field_test": "delete edited field in both worlds and compare canonical projections bytewise",
+    "interpretation": "pairwise indistinguishability conditional on fixed projection, not globally minimal witness",
+    "not_confirmatory": true
+  },
+  "native_qualification": {
+    "max_native_reference_replays": 1,
+    "max_model_calls": 0,
+    "before_native_source_check": ["commit", "task id", "exact reference arguments", "native reward basis"],
+    "native_artifacts": ["pre.json", "post.json", "MANIFEST.sha256.json", "native_receipt.json", "independent_verifier.json"],
+    "sufficient_for_source_scoped_development": "All C1-C3 source-scoped supported; C4 not identified; no errors",
+    "stop_on_any_unexpected_runtime_failure": true,
+    "no_automatic_rerun": true,
+    "no_q1_promotion": true
+  },
+  "external_validation": {
+    "primary": "Independent published upstream tau2 repository at exact pinned commit, native execution in GitHub hosted runner; source-external only",
+    "selection": "One fixed native Task8, not selected after native study result",
+    "secondary_anchor": "amazon-agi/tau2-bench-verified is only a future conditional portability check; task/oracle/patch relation must be qualified independently",
+    "source_scope_and_oracle_independence_separate": true,
+    "real_world_external_effect_oracle": "NOT_AVAILABLE",
+    "benchmark_claim_generalization_if_native_fails": "NONE; report failure evidence",
+    "confirmatory_eligibility": false
+  },
+  "no_go": {
+    "q1_independent_effect_root": "NOT_IDENTIFIED",
+    "q2": "NOT_ELIGIBLE",
+    "no_human_oracle_or_auditors": true,
+    "do_not_report_16_mutants_as_16_independent_tasks": true
+  }
+}
