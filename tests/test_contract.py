@@ -41,7 +41,11 @@ class ContractTests(unittest.TestCase):
  def test_mock_run_artifact_internal_only(self):
   with tempfile.TemporaryDirectory() as td:
    out=Path(td)/'native'
-   with patch('scripts.run_pinned_native.git_checked'),patch('scripts.run_pinned_native.generate',return_value=fake_native()):
+   # Freeze the mocked runtime context so this LOCAL fixture behaves identically
+   # on developer laptops and on GitHub-hosted runners.
+   with patch.dict('os.environ', {'GITHUB_ACTIONS':'false'}), \
+        patch('scripts.run_pinned_native.git_checked'), \
+        patch('scripts.run_pinned_native.generate',return_value=fake_native()):
     x=run(td,out)
    self.assertEqual(x['q1_status'],'Q1_BLOCKED')
    self.assertEqual(x['run_mode'],'LOCAL_DEVELOPMENT')
@@ -49,6 +53,22 @@ class ContractTests(unittest.TestCase):
    # Artifact receipt rejects tamper even though JSON might still be syntactically valid.
    (out/'native_result.json').write_text('{}')
    self.assertIn('ARTIFACT_HASH_MISMATCH:native_result.json',check_artifact(out))
+ def test_mock_run_github_self_reported_not_independent(self):
+  # The same synthetic native result must retain Q1_BLOCKED on the GitHub
+  # runner while carrying the lock receipts required by the artifact contract.
+  with tempfile.TemporaryDirectory() as td:
+   out=Path(td)/'native'
+   packages=Path(td)/'packages.txt';packages.write_text('example==1\n')
+   lock=Path(td)/'uv.lock';lock.write_text('version = 1\n')
+   with patch.dict('os.environ', {'GITHUB_ACTIONS':'true'}), \
+        patch('scripts.run_pinned_native.git_checked'), \
+        patch('scripts.run_pinned_native.generate',return_value=fake_native()):
+    x=run(td,out,pip_freeze=packages,upstream_lock=lock)
+   self.assertEqual(x['run_mode'],'GITHUB_CONTEXT_SELF_REPORTED')
+   self.assertEqual(x['q1_status'],'Q1_BLOCKED')
+   self.assertIs(x['independent_root_verified'],False)
+   self.assertIs(x['confirmatory_eligible'],False)
+   self.assertEqual(check_artifact(out),[])
  def test_overwrite_denied(self):
   with tempfile.TemporaryDirectory() as td:
    p=Path(td)/'native';p.mkdir()

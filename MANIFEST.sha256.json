@@ -34,7 +34,7 @@
   "scripts/verify_redaction_from_private.py": "3a638ac6de2cb76eec7054345ba9cb63bbb56bf8d9ccdee862044546a706209d",
   "scripts/verify_release.py": "7b27875341a20edf2c5798bb0dbc042524a320cbccc731c12466b2cf259b63fe",
   "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "tests/test_contract.py": "e1a0d1073053f71fc8c9a8a783183832ef82960629f5f543b4eaffdce86e9d52",
+  "tests/test_contract.py": "99465613551d543321bb11e5f28f307368ebaea4b8f574e6aadc4927b5e6d97a",
   "tests/test_fetch_and_release.py": "065de2a672aff3ba4fb9fac484ea90997b0c27fad942131f548a1f926d967ba9",
   "tests/test_github.py": "afa75cc760a5fcbffb3e075b8402e8d1354279fc1466960df9621e8db92c5da9",
   "tests/test_privacy.py": "7b9997ebf3b5303580de5e7678af67a2cac63cac8127c70e0aebc94155a13607",
