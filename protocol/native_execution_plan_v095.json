@@ -1,0 +1,100 @@
+{
+  "schema": "ETB_Q1E_NATIVE_COUNTEREXAMPLE_FROZEN_PLAN_v095",
+  "stage": "PROSPECTIVE_NATIVE_FAILURE_QUALIFICATION_PENDING",
+  "source_commit": "c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4",
+  "task_id": "8",
+  "maximum_native_runs": 1,
+  "fresh_environment_per_case": true,
+  "authored_tool_sequences_only": true,
+  "model_calls": 0,
+  "oracle": "v0.9.4 claim-specific witness applied to new projected native pre/post state; gold task fields fixed, no hand labels",
+  "cases": [
+    {
+      "id": "GOLD",
+      "mode": "gold",
+      "expected": "C1_C2_C3_SUPPORTED",
+      "reason": "Native gold reference",
+      "expected_tool_errors": 0,
+      "expected_new_reservations": 1
+    },
+    {
+      "id": "NO_WRITE",
+      "mode": "no_write",
+      "expected": "C1_C2_C3_CONTRADICTED",
+      "reason": "Read-only calls",
+      "expected_tool_errors": 0,
+      "expected_new_reservations": 0
+    },
+    {
+      "id": "BAD_PAYMENT",
+      "mode": "bad_payment",
+      "expected": "C1_C2_C3_CONTRADICTED",
+      "reason": "Intentional invalid payment, no commit anticipated",
+      "expected_tool_errors": 1,
+      "expected_new_reservations": 0
+    },
+    {
+      "id": "SINGLE_PASSENGER",
+      "mode": "single_passenger",
+      "expected": "C1_SUPPORTED_C2_C3_CONTRADICTED",
+      "reason": "Native one-passenger reservation deviates from gold",
+      "expected_tool_errors": 0,
+      "expected_new_reservations": 1
+    },
+    {
+      "id": "INSURANCE",
+      "mode": "insurance",
+      "expected": "C1_SUPPORTED_C2_C3_CONTRADICTED",
+      "reason": "Native insurance deviation with price-matched payment",
+      "expected_tool_errors": 0,
+      "expected_new_reservations": 1
+    },
+    {
+      "id": "BAGGAGE",
+      "mode": "baggage",
+      "expected": "C1_SUPPORTED_C2_C3_CONTRADICTED",
+      "reason": "Native charged baggage deviation",
+      "expected_tool_errors": 0,
+      "expected_new_reservations": 1
+    },
+    {
+      "id": "SPLIT_CERTIFICATES",
+      "mode": "split_certificates",
+      "expected": "C1_SUPPORTED_C2_C3_CONTRADICTED",
+      "reason": "Native split between two certificates",
+      "expected_tool_errors": 0,
+      "expected_new_reservations": 1
+    },
+    {
+      "id": "BOOK_ONLY",
+      "mode": "book_only",
+      "expected": "C1_C2_C3_SUPPORTED",
+      "reason": "Final native state despite omitted read calls",
+      "expected_tool_errors": 0,
+      "expected_new_reservations": 1
+    },
+    {
+      "id": "REORDERED_READS",
+      "mode": "reordered_reads",
+      "expected": "C1_C2_C3_SUPPORTED",
+      "reason": "Benign read-only reordering",
+      "expected_tool_errors": 0,
+      "expected_new_reservations": 1
+    },
+    {
+      "id": "GOLD_PLUS_FAILED_READ",
+      "mode": "gold_plus_failed_read",
+      "expected": "C1_C2_C3_SUPPORTED",
+      "reason": "Process differs despite same post-state",
+      "expected_tool_errors": 1,
+      "expected_new_reservations": 1
+    }
+  ],
+  "stop_rule": "Exactly one qualifying workflow run; stop and preserve failures, do not change native case matrix after seeing results",
+  "native_effect_independence": "NONE_SHARED_TAU2_DB",
+  "external_validation_complete": false,
+  "llm_agent_evaluation": false,
+  "q1_status": "Q1_BLOCKED",
+  "q2_confirmatory_eligible": false,
+  "authoritative_limit": "Native source is externally published but state oracle is not independently administered; DB only, no COMMUNICATE or policy authorization"
+}
